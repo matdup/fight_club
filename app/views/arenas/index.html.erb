@@ -9,15 +9,10 @@
 
     <div div class="cards">
       <% @arenas.each do |arena| %>
-      <div class="card-category">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), <%= cl_image_tag arena.photo, width: 150 %>)">
         <h2><%= link_to arena.title, arena_path(arena) %></h2>
         <p><%= arena.title %></p>
-        <%= cl_image_tag arena.photo, width: 150 %>
-
         <%= link_to "Destroy #{arena.title}", arena_path(arena), method: :delete, data: { confirm: "Are you sure?"} %>
       <% end %>
       </div>
     </div>
-
-
-

@@ -1,6 +1,28 @@
-<h1>All the Arenas</h1>
-<% @arenas.each do |arena| %>
-  <h2><%= link_to arena.name, arena_path(arena) %></h2>
-  <p><%= arena.title %></p>
-  <%= link_to "Destroy #{arena.title}", arena_path(arena), method: :delete, data: { confirm: "Are you sure?"} %>
-<% end %>
+<h1>All the Arenas of Paris</h1>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Le Fight Club</h1>
+    <p>Change your life and learn to fight.</p>
+  </div>
+</div>
+
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <% @arenas.each do |arena| %>
+        <h2><%= link_to arena.title, arena_path(arena) %></h2>
+        <p><%= arena.title %></p>
+        <%= link_to "Destroy #{arena.title}", arena_path(arena), method: :delete, data: { confirm: "Are you sure?"} %>
+      <% end %>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+
+
+
+
+

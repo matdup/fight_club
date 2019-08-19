@@ -1,16 +1,22 @@
-<%= form_for @arena do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<div class="container">
+  <div class="row">
+    <div class="col-4 offset-4">
+      <%= simple_form_for @arena do |f| %>
+        <%= f.input :title %>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+        <%= f.input :description %>
 
-  <%= f.label :photo %>
-  <%= f.text_field :photo %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
 
-  <%= f.label :price %>
-  <%= f.text_field :price %>
+        <%= f.input :price %>
 
-  <%= f.submit %>
-<% end %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
 

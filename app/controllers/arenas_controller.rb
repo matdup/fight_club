@@ -7,6 +7,7 @@ class ArenasController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -16,7 +17,7 @@ class ArenasController < ApplicationController
   def create
     @arena = Arena.new(arena_params)
     @arena.save
-    redirect_to arena_path(@arena)
+    redirect_to arenas_path(@arena)
   end
 
   def edit

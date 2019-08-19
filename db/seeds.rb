@@ -5,38 +5,69 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.create!(
+  user_name: "Mika le grand",
+  email: "test1@test.com",
+  password: "123456"
+  )
+
+User.create!(
+  user_name: "Wadi l'invaincu",
+  email: "test2@test.com",
+  password: "123456"
+  )
+
+User.create!(
+  user_name: "Mathias le redouté",
+  email: "test3@test.com",
+  password: "123456"
+  )
+
+User.create!(
+  user_name: "Qwent le vaillant",
+  email: "test4@test.com",
+  password: "123456"
+  )
+
 Arena.create!(
   title: "Arène du bout de la rue",
   description: "Rue du Bon-Secours, Brussel",
-  price: 15
+  price: 15,
+  user_id: 1
 )
 
 Arena.create!(
   title: "Arène du Mika",
   description: "Rue du seigneur",
-  price: 75
+  price: 75,
+  user_id: 2
 )
 
 Arena.create!(
   title: "Arène de wesh Wadi",
   description: "Rue du olé",
-  price: 150
+  price: 150,
+  user_id: 3
 )
 
 Arena.create!(
   title: "Arène de Mathias",
   description: "Rue du pokémon",
-  price: 15
+  price: 15,
+  user_id: 4
 )
 
 Arena.create!(
   title: "Arène du Qwentinator",
   description: "Rue du bon vivant",
-  price: 55
+  price: 55,
+  user_id: 4
+
 )
 
 Arena.create!(
   title: "Arène de le folie",
   description: "Rue dse blessés",
-  price: 200
+  price: 200,
+  user_id: 3
 )

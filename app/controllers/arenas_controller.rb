@@ -16,7 +16,7 @@ class ArenasController < ApplicationController
   def create
     @arena = Arena.new(arena_params)
     @arena.save
-    redirect_to arena_path(@arena)
+    redirect_to arenas_path(@arena)
   end
 
   def edit
@@ -24,7 +24,7 @@ class ArenasController < ApplicationController
 
   def update
     @arena.update(arena_params)
-    redirect_to arena_path(@arena)
+    redirect_to arenas_path(@arena)
   end
 
   def destroy
@@ -35,7 +35,7 @@ class ArenasController < ApplicationController
   private
 
   def arena_params
-    params.require(:arena).permit(:name, :address, :stars)
+    params.require(:arena).permit(:title, :address, :stars)
   end
 
   def set_arena

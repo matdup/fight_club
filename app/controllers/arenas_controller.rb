@@ -1,5 +1,5 @@
 class ArenasController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :set_arena, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -35,7 +35,7 @@ class ArenasController < ApplicationController
   private
 
   def arena_params
-    params.require(:arena).permit(:title, :address, :stars)
+    params.require(:arena).permit(:title, :description, :photo, :price)
   end
 
   def set_arena

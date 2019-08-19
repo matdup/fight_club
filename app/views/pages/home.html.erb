@@ -1,2 +1,6 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>All the Arenas</h1>
+<% @arenas.each do |arena| %>
+  <h2><%= link_to arena.name, arena_path(arena) %></h2>
+  <p><%= arena.title %></p>
+  <%= link_to "Destroy #{arena.title}", arena_path(arena), method: :delete, data: { confirm: "Are you sure?"} %>
+<% end %>

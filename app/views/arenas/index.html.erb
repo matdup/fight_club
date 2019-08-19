@@ -2,6 +2,7 @@
 <% @arenas.each do |arena| %>
   <h2><%= link_to arena.title, arena_path(arena) %></h2>
   <p><%= arena.title %></p>
+  <%= cl_image_tag arena.photo, width: 150 %>
   <%= link_to "Destroy #{arena.title}", arena_path(arena), method: :delete, data: { confirm: "Are you sure?"} %>
 <% end %>
 

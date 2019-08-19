@@ -16,8 +16,12 @@ class ArenasController < ApplicationController
 
   def create
     @arena = Arena.new(arena_params)
-    @arena.save
-    redirect_to arenas_path(@arena)
+    @arena.user = current_user
+    if @arena.save
+      redirect_to arenas_path(@arena)
+    else
+      render :new
+    end
   end
 
   def edit

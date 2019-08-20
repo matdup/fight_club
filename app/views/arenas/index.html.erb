@@ -9,7 +9,7 @@
     <div class="row">
       <% @arenas.each do |arena| %>
         <div class="col-4 c">
-          <% if arena.photo.nil? %>
+          <% if arena.photo? %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
          url('<%= cl_image_path arena.photo, height: 300, width: 400, crop: :fill %>')">
               <h2 ><%= link_to arena.title, arena_path(arena) %></h2>

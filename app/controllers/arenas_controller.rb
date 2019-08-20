@@ -28,7 +28,7 @@ class ArenasController < ApplicationController
 
   def update
     @arena.update(arena_params)
-    redirect_to arenas_path(@arena)
+    redirect_to arenas_path
   end
 
   def destroy

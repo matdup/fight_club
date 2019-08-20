@@ -7,12 +7,16 @@
 
 <br>
 
-
-<%= link_to edit_arena_path do %>
-<i class="fas fa-pencil-alt"></i>
+<% if policy(@arena).update? %>
+  <%= link_to edit_arena_path do %>
+    <i class="fas fa-pencil-alt"></i>
+  <% end %>
 <% end %>
-<%= link_to arena_path, method: :delete, data: { confirm: "Are you sure?"} do %>
-<i class="fas fa-trash"></i>
+
+<% if policy(@arena).destroy? %>
+  <%= link_to arena_path, method: :delete, data: { confirm: "Are you sure?"} do %>
+    <i class="fas fa-trash"></i>
+  <% end %>
 <% end %>
 
 <%= link_to "Back to all arenas", arenas_path %>

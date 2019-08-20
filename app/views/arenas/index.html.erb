@@ -1,18 +1,23 @@
-<h1>All the Arenas of Paris</h1>
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <h1>Le Fight Club</h1>
-    <p>Change your life and learn to fight.</p>
-  </div>
+<div class="home-banner">
+  <h1>All the Arenas of Paris</h1>
+<p>
+ <span id="banner-typed-text"></span>
+</p>
 </div>
 
-    <div div class="cards">
+  <div class = "container">
+    <div class="row">
       <% @arenas.each do |arena| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), <%= cl_image_tag arena.photo, width: 150 %>)">
-        <h2><%= link_to arena.title, arena_path(arena) %></h2>
-        <p><%= arena.title %></p>
-        <%= link_to "Destroy #{arena.title}", arena_path(arena), method: :delete, data: { confirm: "Are you sure?"} %>
+        <div class="col-4 c">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), <%= cl_image_tag arena.photo %>">
+                <h2><%= link_to arena.title, arena_path(arena) %></h2>
+            </div>
+        </div>
       <% end %>
-      </div>
     </div>
+
+  </div>
+
+
+
+

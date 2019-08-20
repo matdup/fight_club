@@ -16,7 +16,7 @@ class ArenasController < ApplicationController
     @arena = Arena.new(arena_params)
     @arena.user = current_user
     if @arena.save
-      redirect_to arenas_path(@arena)
+      redirect_to arenas_path
     else
       render :new
     end
@@ -27,7 +27,7 @@ class ArenasController < ApplicationController
 
   def update
     @arena.update(arena_params)
-    redirect_to arenas_path(@arena)
+    redirect_to arenas_path
   end
 
   def destroy

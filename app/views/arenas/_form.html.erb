@@ -1,24 +1,27 @@
 <div class="container">
-  <div class="row">
-    <div class="col-4 offset-4">
-      <%= simple_form_for @arena do |f| %>
-        <%= f.input :title %>
+  <div class="row justify-content-center align-item-center">
+    <div class="col-4">
+      <div class="fight-form">
+        <%= simple_form_for @arena do |f| %>
+          <%= f.input :title, placeholder: "title", label: false %>
 
-        <%= f.input :description %>
+          <%= f.input :description, label: false, placeholder: "description" %>
 
-        <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+          <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
 
-        <%= f.input :photo_cache, as: :hidden %>
+          <%= f.input :photo_cache, as: :hidden %>
 
-        <%= f.input :price %>
+          <%= f.input :price, label: false, placeholder: "price" %>
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-primary review-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                Review Your Arena
+            </button>
 
-        <button type="button" class="btn btn-primary review-btn" data-toggle="modal" data-target="#exampleModalCenter">
-            Review Your Arena
-        </button>
+            <%= f.submit %>
 
-        <%= f.submit %>
-
-      <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
@@ -38,7 +41,6 @@
         <p>description: <span class="description-modal"></span></p>
         <p>photo: <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %></p>
         <p>price: <span class="price-modal"></span></p>
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

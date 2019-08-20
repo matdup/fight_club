@@ -6,16 +6,19 @@ class ArenasController < ApplicationController
   end
 
   def show
+    authorize @arena
   end
 
   def new
     @arena = Arena.new
+    authorize @arena
   end
 
   def create
 
     @arena = Arena.new(arena_params)
     @arena.user = current_user
+    authorize @arena
     if @arena.save
       redirect_to arenas_path
     else
@@ -27,11 +30,13 @@ class ArenasController < ApplicationController
   end
 
   def update
+    authorize @arena
     @arena.update(arena_params)
-    redirect_to arenas_path(@arena)
+    redirect_to arenas_path
   end
 
   def destroy
+    authorize @arena
     @arena.destroy
     redirect_to arenas_path
   end

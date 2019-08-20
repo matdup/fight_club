@@ -6,6 +6,7 @@ class ArenasController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     authorize @arena
   end
 
@@ -15,7 +16,6 @@ class ArenasController < ApplicationController
   end
 
   def create
-
     @arena = Arena.new(arena_params)
     @arena.user = current_user
     authorize @arena
@@ -51,4 +51,3 @@ class ArenasController < ApplicationController
     @arena = Arena.find(params[:id])
   end
 end
-

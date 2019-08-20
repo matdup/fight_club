@@ -32,6 +32,7 @@ User.create!(
 Arena.create!(
   title: "Arène du bout de la rue",
   description: "Rue du Bon-Secours, Brussel",
+  photo: "https://images.unsplash.com/photo-1495555687398-3f50d6e79e1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
   price: 15,
   user_id: 1
 )

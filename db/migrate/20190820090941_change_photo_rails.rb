@@ -4,3 +4,4 @@ class ChangePhotoRails < ActiveRecord::Migration[5.2]
     add_column :arenas, :photo, :string
   end
 end
+#this is the good migration

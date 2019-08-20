@@ -1,13 +1,11 @@
 class ArenasController < ApplicationController
   before_action :set_arena, only: [:show, :edit, :update, :destroy]
 
-
   def index
     @arenas = Arena.all
   end
 
   def show
-
   end
 
   def new

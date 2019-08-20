@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 2019_08_20_090941) do
   create_table "arenas", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.string "photo"
     t.integer "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo"
     t.index ["user_id"], name: "index_arenas_on_user_id"
   end
 

@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.arena = @arena
     @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to arena_path(@arena)
     else

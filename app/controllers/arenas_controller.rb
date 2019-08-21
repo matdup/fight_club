@@ -2,8 +2,16 @@ class ArenasController < ApplicationController
   before_action :set_arena, only: [:show, :edit, :update, :destroy]
 
   def index
+    @arenass = Arena.all
+    @arenas = Arena.geocoded #returns flats with coordinates
 
-    @arenas = Arena.all
+    @markers = @arenas.map do |arena|
+      {
+        lat: arena.latitude,
+        lng: arena.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { arena: arena })
+      }
+    end
   end
 
   def show

@@ -26,6 +26,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
+
 }
 
 #map {
@@ -69,6 +70,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
 .card-category > img {
@@ -78,9 +80,11 @@
 }
 
 .card-category h2 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
-  margin: 0;
+  text-align: center;
+  padding: 20px;
+
 }
 
 .card-category p {
@@ -102,4 +106,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+.card-category a{
+  color: white;
+  text-align: center;
+  text-decoration: none;
 }

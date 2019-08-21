@@ -25,12 +25,12 @@
             <% if !arena.photo.nil? %>
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
            url('<%= cl_image_path arena.photo, height: 300, width: 400, crop: :fill %>')">
-                <h2 ><%= link_to arena.title, arena_path(arena) %></h2>
+                <h2><%= link_to arena.title, arena_path(arena) %></h2>
               </div>
             <% else %>
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
            url('https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1980&q=80')">
-                <h2 ><%= link_to arena.title, arena_path(arena) %></h2>
+                <h2><%= link_to arena.title, arena_path(arena) %></h2>
               </div>
             <% end %>
         <% end %>

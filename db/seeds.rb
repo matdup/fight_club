@@ -84,7 +84,7 @@ a.remote_photo_url = "https://images.unsplash.com/photo-1542457953430-c046813ffa
 a.save!
 
 a = Arena.new(
-  title: "Arène de le folie",
+  title: "Arène de la folie",
   description: "Rue dse blessés",
   photo: "https://images.unsplash.com/photo-1542459629-519887d476da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
   price: 200,

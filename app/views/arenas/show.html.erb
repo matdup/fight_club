@@ -1,7 +1,7 @@
 <h1>show</h1>
 <h1><%= @arena.title %></h1>
 <p><%= @arena.description %></p>
-<p><%= @arena.photo %></p>
+<%= cl_image_tag(@arena.photo, width: 400, height: 300, crop: :fill) %>
 <p><%= @arena.price %></p>
 
 

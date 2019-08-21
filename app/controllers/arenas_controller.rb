@@ -29,7 +29,7 @@ class ArenasController < ApplicationController
     @arena.user = current_user
     authorize @arena
     if @arena.save
-      redirect_to arenas_path
+      redirect_to arena_path(@arena)
     else
       render :new
     end

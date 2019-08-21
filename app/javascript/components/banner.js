@@ -1,11 +1,12 @@
 import Typed from 'typed.js';
 
-const loadDynamicBannerText = () => {
-  new Typed('#banner-typed-text', {
-    strings: ["Change your life", "Learn to fight"],
-    typeSpeed: 100,
-    loop: true
-  });
-}
+  const banner = document.getElementById('banner-typed-text');
+  if (banner) {
+    new Typed('#banner-typed-text', {
+      strings: ["Change your life", "Learn to fight"],
+      typeSpeed: 100,
+      loop: true
+    });
+  }
 
 export { loadDynamicBannerText };

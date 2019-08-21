@@ -3,15 +3,15 @@
     <div class="col-4">
       <div class="fight-form">
         <%= simple_form_for @arena do |f| %>
-          <%= f.input :title, placeholder: "title", label: false %>
+          <%= f.input :title, placeholder: "Title of your arena", label: false %>
 
-          <%= f.input :description, label: false, placeholder: "description" %>
+          <%= f.input :description, label: false, placeholder: "Description" %>
 
           <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
 
           <%= f.input :photo_cache, as: :hidden %>
 
-          <%= f.input :price, label: false, placeholder: "price" %>
+          <%= f.input :price, label: false, placeholder: "Price per day" %>
           <div class="d-flex justify-content-between">
             <button type="button" class="btn btn-primary review-btn" data-toggle="modal" data-target="#exampleModalCenter">
                 Review Your Arena

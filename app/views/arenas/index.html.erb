@@ -7,7 +7,7 @@
 
  <div class = "container">
     <div class="row">
-      <% @arenas.each do |arena| %>
+      <% @arenass.each do |arena| %>
         <div class="col-4 c">
           <% if !arena.photo.nil? %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
@@ -24,3 +24,11 @@
       <% end %>
     </div>
   </div>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>

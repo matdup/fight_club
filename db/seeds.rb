@@ -31,7 +31,7 @@ User.create!(
 
 Arena.create!(
   title: "Arène du bout de la rue",
-  description: "Rue du Bon-Secours, Brussel",
+  address: "Rue du Bon-Secours, Brussel",
   photo: "https://images.unsplash.com/photo-1495555687398-3f50d6e79e1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
   price: 15,
   user_id: 1
@@ -39,28 +39,28 @@ Arena.create!(
 
 Arena.create!(
   title: "Arène du Mika",
-  description: "Rue du seigneur",
+  address: "Rue du seigneur",
   price: 75,
   user_id: 2
 )
 
 Arena.create!(
   title: "Arène de wesh Wadi",
-  description: "Rue du olé",
+  address: "Rue du olé",
   price: 150,
   user_id: 3
 )
 
 Arena.create!(
   title: "Arène de Mathias",
-  description: "Rue du pokémon",
+  address: "Rue du pokémon",
   price: 15,
   user_id: 4
 )
 
 Arena.create!(
   title: "Arène du Qwentinator",
-  description: "Rue du bon vivant",
+  address: "Rue du bon vivant",
   price: 55,
   user_id: 4
 
@@ -68,7 +68,7 @@ Arena.create!(
 
 Arena.create!(
   title: "Arène de le folie",
-  description: "Rue dse blessés",
+  address: "Rue dse blessés",
   price: 200,
   user_id: 3
 )

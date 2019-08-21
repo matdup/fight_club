@@ -5,13 +5,9 @@
   </p>
 </div>
 
-
-
-
-    <div class= "content">
-      <div class="rules" style="font-family: Permanent Marker; margin:auto" >
+      <div class="rules text-center p-3" style="font-family: Permanent Marker; margin:auto" >
         <h2 style="font-family: Permanent Marker" >LES REGLES DU FIGHT CLUB</h2>
-        <ul>
+        <ul style="list-style: none">
           <li>The first rule of Fight Club is: You do not talk about Fight Club.</li>
           <li>The second rule of Fight Club is: You do not talk about Fight Club.</li>
           <li>Third rule of Fight Club: someone yells stop, goes limp, taps out, the fight is over.</li>
@@ -23,6 +19,7 @@
         </ul>
       </div>
 
+    <div class= "content">
       <div class="cards">
         <% @arenass.each do |arena| %>
             <% if !arena.photo.nil? %>

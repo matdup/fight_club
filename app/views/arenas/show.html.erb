@@ -1,29 +1,44 @@
-<h1>show</h1>
-<h1><%= @arena.title %></h1>
-<p><%= @arena.description %></p>
-<%= cl_image_tag(@arena.photo, width: 400, height: 300, crop: :fill) %>
-<p><%= @arena.price %></p>
+<div class="card-show pb-3">
+  <%= cl_image_tag(@arena.photo, style: "height: 450px")%>
+  <div class="container">
+  <h1><%= @arena.title %></h1>
+  <div class="d-flex justify-content-between align-items-center card-trip-infos">
+    <h3><%= @arena.description%></h3>
+    <h2><%=@arena.price%><i class="fab fa-bitcoin"></i></h2>
+
+  </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <col-4 class="col-4 offset-4">
 
 
-<br>
+      <br>
 
-<% if policy(@arena).update? %>
-  <%= link_to edit_arena_path do %>
-    <i class="fas fa-pencil-alt"></i>
-  <% end %>
-<% end %>
+      <% if policy(@arena).update? %>
+        <%= link_to edit_arena_path do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+      <% end %>
 
-<% if policy(@arena).destroy? %>
-  <%= link_to arena_path, method: :delete, data: { confirm: "Are you sure?"} do %>
-    <i class="fas fa-trash"></i>
-  <% end %>
-<% end %>
+      <% if policy(@arena).destroy? %>
+        <%= link_to arena_path, method: :delete, data: { confirm: "Are you sure?"} do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      <% end %>
 
-<%= link_to "Back to all arenas", arenas_path %>
+      <%= link_to "Back to all arenas", arenas_path %>
 
 
-<%= simple_form_for [@arena, @booking] do |f| %>
-  <%= f.input :start_at, as: :string %>
-  <%= f.input :ends_at, as: :string %>
-  <%= f.submit "Book this arena", class: "btn btn-primary" %>
-<% end %>
+      <%= simple_form_for [@arena, @booking] do |f| %>
+        <%= f.input :start_at, as: :string %>
+        <%= f.input :ends_at, as: :string %>
+        <%= f.submit "Book this arena", class: "btn btn-primary" %>
+      <% end %>
+
+    </col-4>
+  </div>
+</div>
+
+

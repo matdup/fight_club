@@ -3,6 +3,12 @@ class ArenasController < ApplicationController
 
   def index
     @arenass = Arena.all
+
+  end
+
+  def show
+    @booking = Booking.new
+    authorize @arena
     @arenas = Arena.geocoded #returns flats with coordinates
 
     @markers = @arenas.map do |arena|
@@ -12,11 +18,6 @@ class ArenasController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { arena: arena })
       }
     end
-  end
-
-  def show
-    @booking = Booking.new
-    authorize @arena
   end
 
   def new

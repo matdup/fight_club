@@ -6,7 +6,7 @@
           <div>
             <%= link_to "Back to all arenas", arenas_path %>
             <h1><%= @arena.title %></h1> <h2><%=@arena.price%>€</h2>
-            <%=@arena.address%>
+            <%= @arena.address%>
             <p><%=@arena.description%></p>
 
               <% if policy(@arena).update? %>

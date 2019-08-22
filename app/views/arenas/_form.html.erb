@@ -2,8 +2,10 @@
   <div class="row justify-content-center align-item-center">
     <div class="col-6">
       <div class="fight-form">
+        <h1 class="text-center">Create your arena</h1>
         <%= simple_form_for @arena do |f| %>
-          <%= f.input :title, placeholder: "Title of your arena", label: false %>
+          <%= f.input :title, placeholder: "Title", label: false %>
+          <%= f.input :address, label: false, placeholder: "Address" %>
 
           <%= f.input :description, label: false, placeholder: "Description" %>
 
@@ -37,10 +39,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>title: <span class="title-modal"></span></p>
-        <p>description: <span class="description-modal"></span></p>
-        <p>photo: <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %></p>
-        <p>price: <span class="price-modal"></span></p>
+        <p>Title: <span class="title-modal"></span></p>
+        <p>Description: <span class="description-modal"></span></p>
+        <p>Photo: <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %></p>
+        <p>Price: <span class="price-modal"></span></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

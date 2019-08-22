@@ -30,11 +30,12 @@
 
       <%= link_to "Back to all arenas", arenas_path %>
 
-
-      <%= simple_form_for [@arena, @booking] do |f| %>
-        <%= f.input :start_at, as: :string %>
-        <%= f.input :ends_at, as: :string %>
-        <%= f.submit "Book this arena", class: "btn btn-primary" %>
+      <% if policy(Booking.new(arena_id: @arena.id)).create? %>
+        <%= simple_form_for [@arena, @booking] do |f| %>
+          <%= f.input :start_at, as: :string %>
+          <%= f.input :ends_at, as: :string %>
+          <%= f.submit "Book this arena", class: "btn btn-primary" %>
+        <% end %>
       <% end %>
 
     </col-4>

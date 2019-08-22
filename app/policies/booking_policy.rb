@@ -13,14 +13,14 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    @record.arena.user != user
   end
 
-  # def update?
-  #   @record.user == @user
-  # end
+  def update?
+    @user.admin || @record.user == @user
+  end
 
-  # def destroy?
-  #   @record.user == @user
-  # end
+  def destroy?
+    @user.admin || @record.user == @user
+  end
 end

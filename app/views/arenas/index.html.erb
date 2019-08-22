@@ -1,6 +1,5 @@
-
     <div class= "container">
-      <div class="cards ">
+      <div class="cards pt-5">
         <% @arenass.each do |arena| %>
         <div class="card zoom">
           <div class="card-picture">
@@ -19,6 +18,7 @@
           <div class="card-body">
               <p class="card-text"><%=  arena.description %></p>
               <p class="card-text"><%=  arena.address %></p>
+              <p class="card-text"><%=  arena.price %>€</p>
           </div>
         </div>
         <% end %>

@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top" >
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top bg-white" >
   <%= link_to arenas_path, class: "navbar-brand" do %>
     <i class="fas fa-fist-raised text-danger Width 100%"></i>
   <% end %>
@@ -10,10 +10,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Add an arena", new_arena_path, class: "nav-link #{"home-nav-item color-white" if params[:controller] == "arenas" && params[:action] == "index"}" %>
+          <%= link_to "Add an arena", new_arena_path, class: "nav-link #{"home-nav-item color-black" if params[:controller] == "arenas" && params[:action] == "index"}" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My dashboard", "#", class: "nav-link #{"home-nav-item color-white" if params[:controller] == "arenas" && params[:action] == "index"}" %>
+          <%= link_to "My dashboard", "#", class: "nav-link #{"home-nav-item color-black" if params[:controller] == "arenas" && params[:action] == "index"}" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

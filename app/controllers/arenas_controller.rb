@@ -11,7 +11,7 @@ class ArenasController < ApplicationController
     authorize @arena
     @arenas = Arena.geocoded #returns flats with coordinates
 
-    @markers = set_arena do |arena|
+    @markers = @arenas.map do |arena|
       {
         lat: arena.latitude,
         lng: arena.longitude,

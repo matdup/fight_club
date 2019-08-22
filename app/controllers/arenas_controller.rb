@@ -5,7 +5,7 @@ class ArenasController < ApplicationController
     @arenass = Arena.all
     @arenas = Arena.geocoded #returns flats with coordinates
 
-    @markers = @arenas.map do |arena|
+    @markers = set_arena do |arena|
       {
         lat: arena.latitude,
         lng: arena.longitude,
@@ -53,7 +53,7 @@ class ArenasController < ApplicationController
   private
 
   def arena_params
-    params.require(:arena).permit(:title, :description, :photo, :price)
+    params.require(:arena).permit(:title, :description, :adress, :photo, :price)
   end
 
   def set_arena

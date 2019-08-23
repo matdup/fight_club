@@ -9,6 +9,7 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 15px;
+
 }
 
 .cards {
@@ -17,7 +18,11 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 35px;
   padding: 16px;
-  height: 100px;
+  margin: 25px 0 50px 0;
+
+}
+.card.zoom {
+  border-radius: 10px;
 }
 
 .card-picture {

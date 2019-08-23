@@ -7,6 +7,31 @@
 
       <h2>Vos arenas proposés à la location :</h2>
       <% if @arenas.size > 0 %>
+
+<div class="cards">
+        <% @arenas.each do |arena| %>
+        <div class="card zoom" data-aos="zoom-in-up">
+          <div class="card-picture" data-id="<%= arena.id %>">
+            <% if !arena.photo.nil? %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= image_path arena.photo, height: 300, width: 400, crop: :fill %>')">
+              </div>
+            <% else %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1980&q=80')">
+              </div>
+            <% end %>
+          </div>
+          <div class="card-body">
+            <h2>🥊 <%= arena.title %></h2>
+              <p class="card-text">🧮<%=  arena.price %>€</p>
+              <p class="card-text">📌<%=  arena.address %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+
         <div class="">
           <ul>
             <% @arenas.each do |arena| %>

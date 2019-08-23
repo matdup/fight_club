@@ -1,30 +1,23 @@
-
     <div class= "container">
-      <div class="cards ">
+      <div class="cards pt-5">
         <% @arenass.each do |arena| %>
         <div class="card zoom">
-          <div class="card-picture">
+          <div class="card-picture" data-id="<%= arena.id %>">
             <% if !arena.photo.nil? %>
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
            url('<%= cl_image_path arena.photo, height: 300, width: 400, crop: :fill %>')">
-                <h2><%= link_to arena.title, arena_path(arena) %></h2>
               </div>
             <% else %>
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
            url('https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1980&q=80')">
-                <h2><%= link_to arena.title, arena_path(arena) %></h2>
               </div>
             <% end %>
           </div>
           <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to "View", arena_path(arena) %></button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to "Edit", edit_arena_path(arena) %></button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
+            <h2><%= arena.title %></h2>
+              <p class="card-text"><%=  arena.description %></p>
+              <p class="card-text"><%=  arena.address %></p>
+              <p class="card-text"><%=  arena.price %>€</p>
           </div>
         </div>
         <% end %>

@@ -1,1 +1,58 @@
+<<<<<<< HEAD
+=======
+<div class="m-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="">
+        <div class="d-flex justify-content-around m-2">
+          <div class="m-1">
+            <%= link_to "Back to all arenas", arenas_path %>
+            <h1><%= @arena.title %></h1> <h2><%=@arena.price%>€</h2>
+            <%= @arena.address%>
+            <p><%=@arena.description%></p>
+
+              <% if policy(@arena).update? %>
+                <%= link_to edit_arena_path do %>
+                  <i class="fas fa-pencil-alt"></i>
+                <% end %>
+              <% end %>
+
+              <% if policy(@arena).destroy? %>
+                <%= link_to arena_path, method: :delete, data: { confirm: "Are you sure?"} do %>
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              <% end %>
+          </div>
+
+          <div class="m-2">
+             <%= cl_image_tag(@arena.photo, style: "height: 450px")%>
+          </div>
+
+          <div class="m-2 bg-white p-3">
+            <% if policy(Booking.new(arena_id: @arena.id)).create? %>
+              <%= simple_form_for [@arena, @booking] do |f| %>
+                <%= f.input :start_at, as: :string %>
+                <%= f.input :ends_at, as: :string %>
+                <%= f.submit "Book this arena", class: "btn btn-primary" %>
+              <% end %>
+            <% end %>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div
+        id="map"
+        style="width: 100%;
+        height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+>>>>>>> 0208507f3ff80901f89f52f31077ef0b795d1ac8
 

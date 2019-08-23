@@ -1,12 +1,14 @@
 <div class="m-5">
   <div class="row">
-    <div class="col-12">
+    <div class="col-11" style="margin:auto;">
       <div class="">
-        <div class="d-flex justify-content-around m-2">
-          <div class="m-1">
+
+        <div class="d-flex justify-content-around align-item-center my-3">
+          <div class="m-2">
+
             <%= link_to "Back to all arenas", arenas_path %>
             <h1><%= @arena.title %></h1> <h2><%=@arena.price%>€</h2>
-            <%= @arena.address%>
+            <h2> <%= @arena.address%></h2>
             <p><%=@arena.description%></p>
 
               <% if policy(@arena).update? %>
@@ -22,10 +24,10 @@
               <% end %>
           </div>
           <div class="m-2">
-             <%= cl_image_tag(@arena.photo, style: "height: 450px")%>
+             <%= cl_image_tag(@arena.photo, style: "height: 350px")%>
           </div>
 
-          <div class="m-2 bg-white p-3">
+          <div class="m-2 bg-white p-3 h-100">
             <% if policy(Booking.new(arena_id: @arena.id)).create? %>
               <%= simple_form_for [@arena, @booking] do |f| %>
                 <%= f.input :start_at, as: :string %>

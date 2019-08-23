@@ -30,54 +30,75 @@
         </div>
         <% end %>
       </div>
-
-
-        <div class="">
-          <ul>
-            <% @arenas.each do |arena| %>
-              <li>
-                <%= link_to "#{arena.title}", arena_path(arena) %> :
-                <%= arena.description %>
-                - <%= arena.price %> €
-              </li>
-            <% end %>
-          </ul>
-        </div>
       <% else %>
         <span> Vous n'avez pas d'arènes en locations</span>
       <% end %>
 
       <div class="">
         <h2>Your bookings as a fighter</h2>
-        <ul>
-        <% @bookings.each do |booking| %>
-          <li>
-            <h3><%= link_to "#{booking.arena.title}", arena_path(booking.arena) %> :</h3>
-            <p><%= booking.arena.description %></p>
-            <p>- <%= booking.arena.price %></p>
-            <p>status : <%= booking.status %> </p>
-          </li>
-        <% end %>
-        </ul>
+
+        <div class="cards">
+          <% @bookings.each do |booking| %>
+          <div class="card zoom" data-aos="zoom-in-up">
+            <div class="card-picture" data-id="<%= booking.arena.id %>">
+              <% if !booking.arena.photo.nil? %>
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+             url('<%= image_path booking.arena.photo, height: 300, width: 400, crop: :fill %>')">
+                </div>
+              <% else %>
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+             url('https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1980&q=80')">
+                </div>
+              <% end %>
+            </div>
+            <div class="card-body">
+              <h2>🥊 <%= booking.arena.title %></h2>
+                <p class="card-text">🧮<%=  booking.arena.price %>€</p>
+                <p class="card-text">📌<%=  booking.arena.address %></p>
+                <% if booking.status == 'accepted' %>
+                <p class="card-text">status : <span class="green"><%= booking.status %></span> </p>
+                <% elsif booking.status == 'pending' %>
+                <p class="card-text">status : <span class="orange"><%= booking.status %></span> </p>
+                <% else %>
+                <p class="card-text">status : <span class="red"><%= booking.status %></span></p>
+                <% end %>
+
+            </div>
+          </div>
+          <% end %>
+        </div>
       </div>
 
       <div class="">
         <h2>Your bookings as a owner</h2>
-        <ul>
-        <% @my_bookings.each do |booking| %>
 
-            <% if booking.status == "pending" %>
-            <li>
-              <h3><%= link_to "#{booking.arena.title}", arena_path(booking.arena) %> :</h3>
-              <p><%= booking.arena.description %></p>
-              <p>- <%= booking.arena.price %></p>
-              <p>status : <%= booking.status %> </p>
-              <p><%= link_to "accept", accept_booking_path(booking), method: :patch %></p>
-              <p><%= link_to "decline", decline_booking_path(booking), method: :patch %></p>
-            </li>
+        <div class="cards">
+          <% @my_bookings.each do |booking| %>
+          <% if booking.status == "pending" %>
+          <div class="card zoom" data-aos="zoom-in-up">
+            <div class="card-picture" data-id="<%= booking.arena.id %>">
+              <% if !booking.arena.photo.nil? %>
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+             url('<%= image_path booking.arena.photo, height: 300, width: 400, crop: :fill %>')">
+                </div>
+              <% else %>
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+             url('https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1980&q=80')">
+                </div>
+              <% end %>
+            </div>
+            <div class="card-body">
+              <h2>🥊 <%= booking.arena.title %></h2>
+                <p class="card-text">🧮<%=  booking.arena.price %>€</p>
+                <p class="card-text">📌<%=  booking.arena.address %></p>
+                <p class="card-text">status : <%= booking.status %> </p>
+                <p><%= link_to "accept", accept_booking_path(booking), method: :patch, class: 'btn btn-success' %></p>
+                <p><%= link_to "decline", decline_booking_path(booking), method: :patch, class: 'btn btn-danger' %></p>
+            </div>
+          </div>
           <% end %>
-        <% end %>
-        </ul>
+          <% end %>
+        </div>
       </div>
 
 ​    </div>

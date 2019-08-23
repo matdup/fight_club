@@ -1,10 +1,29 @@
-<h1>My Arenas</h1>
 
-<p> Here are listed all your arenas</p>
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h1><%= "#{current_user.first_name}" %></h1>
 
-<% arenas.each do |arena|  %>
-   <%= arena.title %>
-  <%= arena.description %>
+      <% if @arenas.size > 0 %>
+        <div class="">
+          <h3>Vos arenas proposés à la location :</h3>
+          <ul>
+            <% @arenas.each do |arena| %>
+              <li>
+                <%= link_to "#{arena.title}", arena_path(arena) %> :
+                <%= arena.description %>
+                - <%= arena.price %> €
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-
-ajouter un current_user
+      <div class="">
+        <% @bookings.each do |booking| %> <ul>
+              <li> <%= booking.status %></li></ul>
+            <% end %>
+      </div>
+​    </div>
+​  </div>
+​</div>

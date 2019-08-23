@@ -5,7 +5,7 @@
       <h1><%= "#{current_user.first_name}" %></h1>
 
 
-      <h3>Vos arenas proposés à la location :</h3>
+      <h2>Vos arenas proposés à la location :</h2>
       <% if @arenas.size > 0 %>
         <div class="">
           <ul>
@@ -16,25 +16,24 @@
                 - <%= arena.price %> €
               </li>
             <% end %>
-            </ul>
-            <% else %>
-            <span> Vous n'avez pas d'arènes en locations</span>
+          </ul>
         </div>
+      <% else %>
+        <span> Vous n'avez pas d'arènes en locations</span>
       <% end %>
 
       <div class="">
-        <h3>Vos demandes de reservations</h3>
-        <% @bookings.each do |booking| %> <ul>
-              <li>
-                <%= link_to "#{booking.arena_id.title}", #arena_path(arena) %> :
-                <%= booking.arena_id.description %>
-                - <%= booking.arena_id.price %> €<br>
-                <span>status :</span> <%= booking.status%>
-              </li>
-            <% end %>
-            </ul>
-            <% else %>
-            <% end %>
+        <h2>Vos demandes de reservations</h2>
+        <ul>
+        <% @bookings.each do |booking| %>
+          <li>
+            <h3><%= link_to "#{booking.arena.title}", arena_path(booking.arena) %> :</h3>
+            <p><%= booking.arena.description %></p>
+            <p>- <%= booking.arena.price %></p>
+            <p>status : <%= booking.status %> </p>
+          </li>
+        <% end %>
+        </ul>
       </div>
 ​    </div>
 ​  </div>

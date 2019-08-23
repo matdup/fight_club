@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
 Arena.destroy_all
 Booking.destroy_all
+User.destroy_all
 
 User.create!(
   user_name: "Mika le grand",
@@ -152,8 +152,8 @@ a.remote_photo_url = "https://images.unsplash.com/photo-1542459629-519887d476da?
 a.save!
 
 b = Booking.new(
-  arena_id: 1,
-  user_id: 1,
+  arena_id: Arena.first.id,
+  user_id: User.first.id,
   start_at: 2019_08_22_095145,
   ends_at: 2019_10_12_095145,
   status: "pending",
@@ -163,8 +163,8 @@ b = Booking.new(
 b.save!
 
 b = Booking.new(
-  arena_id: 3,
-  user_id: 1,
+  arena_id: Arena.first.id + 2,
+  user_id: User.first.id,
   start_at: 2019_08_22_095145,
   ends_at: 2019_10_12_095145,
   status: "pending",
@@ -174,29 +174,7 @@ b = Booking.new(
 b.save!
 
 b = Booking.new(
-  arena_id: 2,
-  user_id: 4,
-  start_at: 2019_08_22_095145,
-  ends_at: 2019_10_12_095145,
-  status: "pending",
-  price: 199,
-
-)
-b.save!
-
-b = Booking.new(
-  arena_id: 3,
-  user_id: 4,
-  start_at: 2019_08_22_095145,
-  ends_at: 2019_10_12_095145,
-  status: "pending",
-  price: 199,
-
-)
-b.save!
-
-b = Booking.new(
-  arena_id: 2,
+  arena_id: Arena.all[1].id,
   user_id: User.all[3].id,
   start_at: 2019_08_22_095145,
   ends_at: 2019_10_12_095145,
@@ -207,7 +185,29 @@ b = Booking.new(
 b.save!
 
 b = Booking.new(
-  arena_id: 2,
+  arena_id: Arena.all[2].id,
+  user_id: User.all[3].id,
+  start_at: 2019_08_22_095145,
+  ends_at: 2019_10_12_095145,
+  status: "pending",
+  price: 199,
+
+)
+b.save!
+
+b = Booking.new(
+  arena_id: Arena.all[1].id,
+  user_id: User.all[3].id,
+  start_at: 2019_08_22_095145,
+  ends_at: 2019_10_12_095145,
+  status: "pending",
+  price: 199,
+
+)
+b.save!
+
+b = Booking.new(
+  arena_id: Arena.all[1].id,
   user_id: User.all[1].id,
   start_at: 2019_08_22_095145,
   ends_at: 2019_10_12_095145,
@@ -218,7 +218,7 @@ b = Booking.new(
 b.save!
 
 b = Booking.new(
-  arena_id: 3,
+  arena_id: Arena.all[2].id,
   user_id: User.all[1].id,
   start_at: 2019_08_22_095145,
   ends_at: 2019_10_12_095145,
@@ -229,7 +229,7 @@ b = Booking.new(
 b.save!
 
 b = Booking.new(
-  arena_id: 4,
+  arena_id: Arena.all[3].id,
   user_id: User.all[4].id,
   start_at: 2019_08_22_095145,
   ends_at: 2019_10_12_095145,
@@ -240,8 +240,8 @@ b = Booking.new(
 b.save!
 
 b = Booking.new(
-  arena_id: 4,
-  user_id: 5,
+  arena_id: Arena.all[3].id,
+  user_id: User.all[4],
   start_at: 2019_08_22_095145,
   ends_at: 2019_10_12_095145,
   status: "pending",
@@ -251,8 +251,8 @@ b = Booking.new(
 b.save!
 
 b = Booking.new(
-  arena_id: 2,
-  user_id: 3,
+  arena_id: Arena.all[1].id,
+  user_id: User.all[4],
   start_at: 2019_08_22_095145,
   ends_at: 2019_10_12_095145,
   status: "pending",

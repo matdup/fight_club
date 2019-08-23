@@ -1,10 +1,40 @@
-<h1>My Arenas</h1>
 
-<p> Here are listed all your arenas</p>
-
-<% arenas.each do |arena|  %>
-   <%= arena.title %>
-  <%= arena.description %>
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h1><%= "#{current_user.first_name}" %></h1>
 
 
-ajouter un current_user
+      <h2>Vos arenas proposés à la location :</h2>
+      <% if @arenas.size > 0 %>
+        <div class="">
+          <ul>
+            <% @arenas.each do |arena| %>
+              <li>
+                <%= link_to "#{arena.title}", arena_path(arena) %> :
+                <%= arena.description %>
+                - <%= arena.price %> €
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% else %>
+        <span> Vous n'avez pas d'arènes en locations</span>
+      <% end %>
+
+      <div class="">
+        <h2>Vos demandes de reservations</h2>
+        <ul>
+        <% @bookings.each do |booking| %>
+          <li>
+            <h3><%= link_to "#{booking.arena.title}", arena_path(booking.arena) %> :</h3>
+            <p><%= booking.arena.description %></p>
+            <p>- <%= booking.arena.price %></p>
+            <p>status : <%= booking.status %> </p>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+​    </div>
+​  </div>
+​</div>

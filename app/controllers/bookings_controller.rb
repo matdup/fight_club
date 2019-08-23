@@ -4,15 +4,15 @@ class BookingsController < ApplicationController
   end
 ​
   def new
-    @booking = Booking.new
     @arena = Arena.find(params[:arena_id])
+    @booking = Booking.new
   end
 ​
   def create
-    @Arena = Arena.find(params[:arena_id])
+    @arena = Arena.find(params[:arena_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.Arena = @arena
+    @booking.arena = @arena
     @booking.price = @arena.price
     @booking.status = "pending"
     authorize @booking

@@ -16,6 +16,10 @@ class ArenaPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    @user.admin || @record.user == @user
+  end
+
   def update?
     @user.admin || @record.user == @user
   end

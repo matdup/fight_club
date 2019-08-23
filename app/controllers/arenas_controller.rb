@@ -37,6 +37,7 @@ class ArenasController < ApplicationController
   end
 
   def edit
+    authorize @arena
   end
 
   def update

@@ -4,15 +4,13 @@
       <div class="fight-form" data-aos="fade-down"
      data-aos-easing="linear"
      data-aos-duration="1500">
-        <h1 class="text-center">Create your arena</h1>
+
 
         <%= simple_form_for @arena do |f| %>
 
           <%= f.input :title, placeholder: "Title", label: false %>
 
           <%= f.input :address, label: false, placeholder: "Address" %>
-
-          <%= f.input :capacity, label: false, placeholder: "Capacity" %>
 
           <%= f.input :description, label: false, placeholder: "Description" %>
           <%= f.input :price, label: false, placeholder: "Price per day" %>

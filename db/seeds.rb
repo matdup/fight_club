@@ -129,7 +129,7 @@ a.save!
 
 a = Arena.new(
   title: "Arène de la folie",
-  address: "Rue dse blessés",
+  address: "Rue des blessés",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
   photo: "https://images.unsplash.com/photo-1542459629-519887d476da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
   price: 200,
@@ -141,7 +141,7 @@ a.save!
 
 a = Arena.new(
   title: "Arène de la folie",
-  address: "Rue dse blessés",
+  address: "Rue des blessés",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
   photo: "https://images.unsplash.com/photo-1542459629-519887d476da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
   price: 199,

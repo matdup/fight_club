@@ -23,7 +23,7 @@
       <% end %>
 
       <div class="">
-        <h2>Vos demandes de reservations</h2>
+        <h2>Your bookings as a fighter</h2>
         <ul>
         <% @bookings.each do |booking| %>
           <li>
@@ -35,6 +35,26 @@
         <% end %>
         </ul>
       </div>
+
+      <div class="">
+        <h2>Your bookings as a owner</h2>
+        <ul>
+        <% @my_bookings.each do |booking| %>
+
+            <% if booking.status == "pending" %>
+            <li>
+              <h3><%= link_to "#{booking.arena.title}", arena_path(booking.arena) %> :</h3>
+              <p><%= booking.arena.description %></p>
+              <p>- <%= booking.arena.price %></p>
+              <p>status : <%= booking.status %> </p>
+              <p><%= link_to "accept", accept_booking_path(booking), method: :patch %></p>
+              <p><%= link_to "decline", decline_booking_path(booking), method: :patch %></p>
+            </li>
+          <% end %>
+        <% end %>
+        </ul>
+      </div>
+
 ​    </div>
 ​  </div>
 ​</div>

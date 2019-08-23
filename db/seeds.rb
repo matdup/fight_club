@@ -241,7 +241,7 @@ b.save!
 
 b = Booking.new(
   arena_id: Arena.all[3].id,
-  user_id: User.all[4],
+  user_id: User.all[4].id,
   start_at: 2019_08_22_095145,
   ends_at: 2019_10_12_095145,
   status: "pending",
@@ -252,7 +252,7 @@ b.save!
 
 b = Booking.new(
   arena_id: Arena.all[1].id,
-  user_id: User.all[4],
+  user_id: User.all[4].id,
   start_at: 2019_08_22_095145,
   ends_at: 2019_10_12_095145,
   status: "pending",

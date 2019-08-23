@@ -4,9 +4,10 @@
     <div class="col-8 offset-2">
       <h1><%= "#{current_user.first_name}" %></h1>
 
+
+      <h3>Vos arenas proposés à la location :</h3>
       <% if @arenas.size > 0 %>
         <div class="">
-          <h3>Vos arenas proposés à la location :</h3>
           <ul>
             <% @arenas.each do |arena| %>
               <li>
@@ -15,13 +16,24 @@
                 - <%= arena.price %> €
               </li>
             <% end %>
-          </ul>
+            </ul>
+            <% else %>
+            <span> Vous n'avez pas d'arènes en locations</span>
         </div>
       <% end %>
 
       <div class="">
+        <h3>Vos demandes de reservations</h3>
         <% @bookings.each do |booking| %> <ul>
-              <li> <%= booking.status %></li></ul>
+              <li>
+                <%= link_to "#{booking.arena_id.title}", #arena_path(arena) %> :
+                <%= booking.arena_id.description %>
+                - <%= booking.arena_id.price %> €<br>
+                <span>status :</span> <%= booking.status%>
+              </li>
+            <% end %>
+            </ul>
+            <% else %>
             <% end %>
       </div>
 ​    </div>
